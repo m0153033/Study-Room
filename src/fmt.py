@@ -27,6 +27,8 @@ DRUGS = {  # generic -> brand
  "miglitol":"Glyset","sitagliptin":"Januvia","pramlintide":"Symlin","insulin lispro":"Humalog","lispro":"Humalog",
  "insulin aspart":"NovoLog","aspart":"NovoLog","glulisine":"Apidra","glargine":"Lantus","detemir":"Levemir","degludec":"Tresiba",
  "albuterol":"ProAir","amlodipine":"Norvasc","prednisone":"Deltasone","tranexamic acid":"Cyklokapron","desmopressin":"DDAVP","epinephrine":"EpiPen",
+ "acyclovir":"Zovirax","oseltamivir":"Tamiflu","nirsevimab":"Beyfortus","fluorouracil":"Efudex","hydroxychloroquine":"Plaquenil","belimumab":"Benlysta",
+ "adalimumab":"Humira","infliximab":"Remicade","etanercept":"Enbrel","sulfasalazine":"Azulfidine","leflunomide":"Arava",
  "alvimopan":"Entereg","docusate sodium":"Colace","docusate":"Colace","bisacodyl":"Dulcolax","polyethylene glycol":"MiraLAX",
  "methotrexate":"Trexall","cytarabine":"Cytosar-U","mercaptopurine":"Purixan","cyclophosphamide":"Cytoxan","carmustine":"BiCNU",
  "cisplatin":"Platinol","doxorubicin":"Adriamycin","vincristine":"Oncovin","paclitaxel":"Taxol","topotecan":"Hycamtin",
@@ -92,6 +94,12 @@ ABBR = {
  "BBB":"blood-brain barrier","ASM":"antiseizure medication","SJS":"Stevens-Johnson syndrome","HLA":"human leukocyte antigen",
  "ADHD":"attention-deficit/hyperactivity disorder","MS":"multiple sclerosis","RLS":"restless legs syndrome","CN":"cranial nerve",
  "GERD":"gastroesophageal reflux disease","GE":"gastroesophageal","LES":"lower esophageal sphincter","PUD":"peptic ulcer disease",
+ "VZV":"varicella-zoster virus","EBV":"Epstein-Barr virus","RSV":"respiratory syncytial virus","MMR":"measles, mumps, rubella","EIA":"enzyme immunoassay",
+ "PCR":"polymerase chain reaction","LUQ":"left upper quadrant","SLE":"systemic lupus erythematosus","anti-CCP":"anti-cyclic citrullinated peptide",
+ "Anti-CCP":"anti-cyclic citrullinated peptide","Anti-dsDNA":"anti-double-stranded DNA",
+ "ANA":"antinuclear antibody","anti-dsDNA":"anti-double-stranded DNA","MCP":"metacarpophalangeal","PIP":"proximal interphalangeal","DMARD":"disease-modifying antirheumatic drug",
+ "DMARDs":"disease-modifying antirheumatic drugs","TNF":"tumor necrosis factor","JAK":"Janus-associated kinase","RF":"rheumatoid factor","CRP":"C-reactive protein",
+ "UV":"ultraviolet","UVA":"ultraviolet A","UVB":"ultraviolet B","BCC":"basal cell carcinoma","SCC":"squamous cell carcinoma","SPF":"sun protection factor",
  "H2":"histamine-2","PPI":"proton pump inhibitor","PPIs":"proton pump inhibitors","TPN":"total parenteral nutrition",
  "PPN":"peripheral parenteral nutrition","RUQ":"right upper quadrant","RLQ":"right lower quadrant","LLQ":"left lower quadrant",
  "IBD":"inflammatory bowel disease","HIDA":"hepatobiliary iminodiacetic acid","ERCP":"endoscopic retrograde cholangiopancreatography",
@@ -185,7 +193,7 @@ def format_question(texts, skip=(), extra=None):
                 if word in seen: return word
                 seen.add(word)
                 full = extra.get(word, ABBR.get(word)); exp = full.lower()
-                if exp in paren or (pre.endswith("(") and exp in pre.lower()): return word
+                if exp in paren or (pre.endswith("(") and exp in pre.lower()) or (pre.endswith("(") and rest.startswith(")")): return word
                 return f"{word} ({full})"
             return word
         out.append(_RX.sub(sub, t))

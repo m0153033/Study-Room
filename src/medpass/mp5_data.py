@@ -6,8 +6,8 @@ def D(g,b,cls,grp,u,use,f,tip,warn,cno=None):
 
 DRUGS = [
 # ---------- 12.1 Cancer ----------
-D("methotrexate","Trexall","Antimetabolite: folic acid analog","antimet",["chemo","marrow","sphase"],"Cancer; lower doses for RA and psoriasis",
-  ["Folic acid analog; lower doses treat rheumatoid arthritis and psoriasis","Antidote for high-dose bone marrow depression: leucovorin","Avoid alcohol: liver damage"],"Antimetabolites = S phase.","Bone marrow suppression; mucositis"),
+D("methotrexate","Trexall","Antimetabolite: folic acid analog","antimet",["chemo","marrow","sphase","ra"],"Cancer; lower doses for RA and psoriasis",
+  ["Folic acid analog; lower doses treat rheumatoid arthritis and psoriasis","Common first-line DMARD for rheumatoid arthritis","Antidote for high-dose bone marrow depression: leucovorin","Avoid alcohol: liver damage"],"Antimetabolites = S phase.","Bone marrow suppression; mucositis"),
 D("cytarabine","Cytosar-U","Antimetabolite: pyrimidine analog","antimet",["chemo","marrow","sphase"],"Cancer (can be given intrathecally)",
   ["Intrathecal use raises concern for arachnoiditis","Dexamethasone is given with the intrathecal form"],"Antimetabolites = S phase.","Arachnoiditis with intrathecal use"),
 D("mercaptopurine","Purixan","Antimetabolite: purine analog","antimet",["chemo","marrow","sphase"],"Cancer",
@@ -68,6 +68,37 @@ D("psyllium","Metamucil","Bulk-forming laxative","bulk",["stool"],"Constipation"
   ["Needs plenty of fluid or it forms a thick, obstructing mass"],"Bulk = fiber + water.","Obstruction without enough fluid"),
 D("polyethylene glycol","MiraLAX","Laxative","bulk",["stool"],"Constipation",
   ["Listed with the laxatives on the lecture slide"],"Pulls water into the stool.","Keep fluids up"),
+# ---------- 13.1 Viral syndromes ----------
+D("acyclovir","Zovirax","Antiviral","antiviral",["virus","vzv"],"Shingles; severe or immunocompromised chickenpox",
+  ["Start within 24–72 hours of the shingles rash","Monitor kidney function and push fluids","Oral, IV or topical; finish the full course"],"-clovir = herpes-family antiviral.","Kidney injury: hydrate"),
+D("oseltamivir","Tamiflu","Antiviral (neuraminidase inhibitor)","antiviral",["virus","flu"],"Influenza",
+  ["Start within 24–48 hours of symptoms, especially for high-risk clients","Common side effects: nausea and vomiting"],"Tamiflu = flu, started early.","Nausea and vomiting"),
+D("nirsevimab","Beyfortus","Long-acting monoclonal antibody (RSV)","rsvmab",["virus","rsv"],"Protects infants in their first RSV season",
+  ["Most infants need EITHER the maternal RSV vaccine OR this antibody, not both"],"-mab = monoclonal antibody.","Given when indicated, not with maternal vaccine protection"),
+D("acetaminophen",None,"Non-opioid analgesic","apap5",["fever"],"Fever and pain in viral illness",
+  ["Chickenpox fever: use acetaminophen, never aspirin (Reye syndrome)"],"Never aspirin with chickenpox or flu.","Liver damage with overdose"),
+D("gabapentin","Neurontin","Neuropathic pain agent","gaba5",["vzv"],"Shingles nerve pain and postherpetic neuralgia",
+  ["Option for shingles pain along with analgesics and TCAs"],"Calms nerve pain.","Drowsiness"),
+# ---------- 13.2 Skin cancer ----------
+D("fluorouracil","Efudex","Topical antineoplastic (5-FU)","fu",["skin"],"Actinic keratosis and superficial basal cell lesions",
+  ["The skin looks worse (irritated, crusted, eroded) before it heals"],"Worse before better.","Expected irritation; protect from sun"),
+# ---------- 13.3 RA & SLE ----------
+D("hydroxychloroquine","Plaquenil","Antimalarial","antimal",["sle","eye"],"SLE skin and joint disease; reduces flares",
+  ["Can cause vision changes: regular eye exams (about every 6 months)"],"Plaquenil = eyes.","Retinal damage"),
+D("belimumab","Benlysta","Monoclonal antibody (B-cell inhibitor)","bel",["sle","immune"],"Active SLE",
+  ["First FDA-approved drug designed specifically for SLE","Given IV or SQ, ages 5 and older"],"-mab = monoclonal antibody.","Infection risk"),
+D("adalimumab","Humira","TNF inhibitor (biologic DMARD)","tnf",["ra","immune"],"Rheumatoid arthritis",
+  ["Binds tumor necrosis factor, which drives joint destruction"],"-mab = monoclonal antibody against TNF.","Serious infections: report fever"),
+D("infliximab","Remicade","TNF inhibitor (biologic DMARD)","tnf",["ra","immune"],"Rheumatoid arthritis",
+  ["Binds tumor necrosis factor, which drives joint destruction"],"-ximab = chimeric monoclonal antibody.","Serious infections: report fever"),
+D("etanercept","Enbrel","TNF blocker (immunosuppressant DMARD)","tnf",["ra","immune"],"Rheumatoid arthritis",
+  ["TNF blocker listed with the RA immunosuppressants"],"-cept = receptor fusion protein.","Serious infections: report fever"),
+D("sulfasalazine","Azulfidine","DMARD (anti-inflammatory)","dmard",["ra"],"Rheumatoid arthritis",
+  ["DMARD with an anti-inflammatory effect"],"Slows RA progression.","GI upset"),
+D("leflunomide","Arava","DMARD (immunomodulator)","dmard",["ra"],"Rheumatoid arthritis",
+  ["Immunomodulator DMARD"],"Slows RA progression.","Liver toxicity"),
+D("prednisone","Deltasone","Corticosteroid","steroid5",["ra","sle","steroid"],"RA flares (bridge) and active SLE",
+  ["Long-term use causes osteoporosis","Never stop long-term therapy abruptly"],"Bridge while DMARDs kick in.","Infection, high glucose, high BP, bone loss"),
 ]
 
 def L(id,t,sfx,d,how,why,watch): return {"id":id,"t":t,"sfx":sfx,"d":d,"how":how,"why":why,"watch":watch}
@@ -104,6 +135,18 @@ LESSONS = [
    "Prokinetics and opioid blockers get the bowel moving; laxatives soften or move stool.",
    [["Tardive dyskinesia","Metoclopramide."],["MI","Alvimopan; 15 doses max."],["Dependence","Long-term stimulant laxatives."]],
    ["Fluids with psyllium and docusate","Never assume laxatives for an undiagnosed mechanical obstruction"]),
+ L("viral","Antivirals & RSV protection",["-clovir","Tamiflu","-mab"],["acyclovir","oseltamivir","nirsevimab","acetaminophen","gabapentin"],
+   "Antivirals slow viral replication when started early; nirsevimab gives infants ready-made RSV antibodies.",
+   [["Shorter, milder illness","Antivirals started early."],["Kidney injury","Acyclovir without enough fluid."],["Reye syndrome","Aspirin in a child with a viral illness."]],
+   ["Acyclovir: 24–72 hours, fluids, finish course","Oseltamivir: 24–48 hours","Chickenpox fever: acetaminophen, not aspirin"]),
+ L("skin","Topical skin cancer treatment",["5-FU"],["fluorouracil"],
+   "Topical fluorouracil destroys abnormal skin cells in actinic keratosis and superficial basal lesions.",
+   [["Skin looks worse first","Irritation and crusting before healing."]],
+   ["Warn the client before starting"]),
+ L("ra","RA & SLE meds",["-mab","-cept","DMARD","Plaquenil"],["hydroxychloroquine","belimumab","adalimumab","infliximab","etanercept","sulfasalazine","leflunomide","prednisone"],
+   "DMARDs and biologics slow the autoimmune attack; steroids calm flares; hydroxychloroquine controls lupus.",
+   [["Infections","Immunosuppression."],["Vision changes","Hydroxychloroquine."],["Bone loss","Long-term steroids."]],
+   ["Report fever on biologics","Eye exams on hydroxychloroquine","Never stop steroids abruptly"]),
 ]
 SORT = {
  "cls":[
@@ -113,6 +156,9 @@ SORT = {
   {"k":"horm","l":"Hormonal cancer agent","s":"","d":["tamoxifen","anastrozole","flutamide","leuprolide"],"w":"Block or lower hormones."},
   {"k":"target","l":"Targeted / biologic","s":"","d":["interferon alfa","trastuzumab","imatinib"],"w":"Immune or specific target."},
   {"k":"hiv","l":"Antiretroviral","s":"","d":["enfuvirtide","maraviroc","zidovudine","delavirdine","ritonavir","raltegravir"],"w":"Block HIV."},
+  {"k":"antiviral","l":"Antiviral","s":"","d":["acyclovir","oseltamivir"],"w":"Slow viral replication."},
+  {"k":"tnf","l":"TNF inhibitor","s":"","d":["adalimumab","infliximab","etanercept"],"w":"Block tumor necrosis factor."},
+  {"k":"dmard","l":"Conventional DMARD","s":"","d":["sulfasalazine","leflunomide"],"w":"Slow RA."},
   {"k":"lax","l":"Laxative / stool softener","s":"","d":["docusate","bisacodyl","psyllium","polyethylene glycol"],"w":"Move or soften stool."},
  ],
  "use":[
@@ -121,6 +167,9 @@ SORT = {
   {"k":"prost","l":"Prostate cancer","d":["flutamide","leuprolide"],"w":"Androgen suppression."},
   {"k":"hiv","l":"HIV","d":["enfuvirtide","maraviroc","zidovudine","delavirdine","ritonavir","raltegravir"],"w":"cART."},
   {"k":"ileus","l":"Ileus / slow motility","d":["metoclopramide","alvimopan"],"w":"Get it moving."},
+  {"k":"virus","l":"Viral illness","d":["acyclovir","oseltamivir","nirsevimab"],"w":"Shingles, flu, RSV."},
+  {"k":"ra","l":"Rheumatoid arthritis","d":["methotrexate","adalimumab","infliximab","etanercept","sulfasalazine","leflunomide","prednisone"],"w":"DMARDs and bridges."},
+  {"k":"sle","l":"Lupus (SLE)","d":["hydroxychloroquine","belimumab","prednisone"],"w":"Control flares."},
   {"k":"const","l":"Constipation","d":["docusate","bisacodyl","psyllium","polyethylene glycol"],"w":"Stool."},
  ],
  "warn":[
@@ -129,6 +178,8 @@ SORT = {
   {"k":"liver","l":"Liver toxicity","d":["flutamide","maraviroc","delavirdine"],"w":"LFTs, jaundice."},
   {"k":"ves","l":"Vesicant","d":["doxorubicin","vincristine","carmustine"],"w":"Stop if infiltrating."},
   {"k":"clot","l":"Blood clots","d":["tamoxifen"],"w":"DVT, PE, stroke."},
+  {"k":"infect","l":"Serious infection","d":["adalimumab","infliximab","etanercept","belimumab","prednisone"],"w":"Report fever."},
+  {"k":"eye","l":"Vision changes","d":["hydroxychloroquine"],"w":"Eye exams."},
  ],
 }
 TRICKY = {"cls":[["antimet","alkyl","antimit"],["horm","target"]],"use":[["breast","prost"],["ileus","const"]],"warn":[["heart","marrow"],["liver","ves"]]}
@@ -136,9 +187,18 @@ LOOK = [
  {"t":"Cyclophosphamide vs cisplatin vs doxorubicin vs vincristine","d":{"cyclophosphamide":["Hemorrhagic cystitis"],"cisplatin":["Ototoxic + nephrotoxic"],"doxorubicin":["Cardiotoxic; red urine"],"vincristine":["Neuropathy + ileus"]}},
  {"t":"Tamoxifen vs anastrozole vs flutamide vs leuprolide","d":{"tamoxifen":["Blood clots"],"anastrozole":["Bone loss"],"flutamide":["Liver toxicity"],"leuprolide":["Initial flare, then suppression"]}},
  {"t":"HIV drug signatures","d":{"zidovudine":["Bone marrow suppression"],"delavirdine":["Rash"],"ritonavir":["Many drug interactions"],"raltegravir":["Muscle injury: CK"],"enfuvirtide":["Injection-site reactions"]}},
+ {"t":"Acyclovir vs oseltamivir","d":{"acyclovir":["Shingles: within 24–72 hours; hydrate"],"oseltamivir":["Flu: within 24–48 hours; nausea"]}},
+ {"t":"RA vs SLE meds","d":{"methotrexate":["First-line RA DMARD"],"hydroxychloroquine":["SLE; eye exams"],"belimumab":["First drug made for SLE"],"adalimumab":["TNF inhibitor; infection"]}},
  {"t":"Bowel meds","d":{"metoclopramide":["Tardive dyskinesia"],"alvimopan":["Up to 15 doses; MI risk"],"bisacodyl":["Dependence"],"psyllium":["Needs fluid"]}},
 ]
 XCLS = [
+ {"k":"x_rsv","l":"RSV monoclonal antibody","s":"-mab","d":["nirsevimab"]},
+ {"k":"x_apap","l":"Non-opioid analgesic","s":"","d":["acetaminophen"]},
+ {"k":"x_gaba","l":"Neuropathic pain agent","s":"","d":["gabapentin"]},
+ {"k":"x_fu","l":"Topical antineoplastic","s":"","d":["fluorouracil"]},
+ {"k":"x_hcq","l":"Antimalarial","s":"","d":["hydroxychloroquine"]},
+ {"k":"x_bel","l":"B-cell inhibitor","s":"","d":["belimumab"]},
+ {"k":"x_ster","l":"Corticosteroid","s":"","d":["prednisone"]},
  {"k":"x_mesna","l":"Chemoprotectant","s":"","d":["mesna"]},
  {"k":"x_plat","l":"Platinum compound","s":"","d":["cisplatin"]},
  {"k":"x_antitumor","l":"Antitumor antibiotic","s":"","d":["doxorubicin"]},
@@ -150,4 +210,7 @@ CLS_SECT = [
  ["Cancer",["antimet","alkyl","x_mesna","x_plat","x_antitumor","antimit","x_topo","horm","target"]],
  ["HIV",["hiv"]],
  ["Bowel",["x_proki","x_mu","lax"]],
+ ["Viral",["antiviral","x_rsv","x_apap","x_gaba"]],
+ ["Skin cancer",["x_fu"]],
+ ["RA + SLE",["tnf","dmard","x_hcq","x_bel","x_ster"]],
 ]

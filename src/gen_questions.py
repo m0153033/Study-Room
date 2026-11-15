@@ -27,7 +27,7 @@ TOPICS = {
 BLUEPRINT = {"neuro":[8,1],"hf":[7,2],"giinf":[7,1],"digest":[5,0],"glucose":[12,2],"blood":[5,1],"teams":[4,0],
  "e5imm":[8,1],"e5bowel":[7,1],"e5viral":[7,1],"e5skin":[5,1],"e5slera":[7,1],"e5ibd":[7,1],"e5hiv":[7,1]}
 # abbreviations that mean different things in different lectures
-EXTRA = {"vision":{"MD":"macular degeneration"},"dys1":{"AV":"atrioventricular"},"male":{"ED":"erectile dysfunction"},
+EXTRA = {"vision":{"MD":"macular degeneration"},"dys1":{"AV":"atrioventricular","RA":"right arm","LA":"left arm","LL":"left leg","RL":"right leg"},"male":{"ED":"erectile dysfunction"},
  "e2w51":{"AV":"atrioventricular"},"e3w82":{"AV":"arteriovenous","PD":"peritoneal dialysis","RRT":"renal replacement therapy","HD":"hemodialysis"},
  "e3w92":{"PD":"personality disorder"},"e3w91":{"AD":"Alzheimer's disease"}}
 EXCLUDE = {"e3a_n1","e3b_A1","e3a_o48","e3a_o64"}   # arithmetic (MAP / CBI totals): math is left out
