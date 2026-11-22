@@ -1,5 +1,6 @@
 # Week 13.3 Dysfunction in Immunity: RA & SLE — lesson plan, notes, assigned textbook (Nursing: A Concept-Based
-# Approach to Learning Vol 1, Exemplars 8.C and 8.D), pre-class quiz points. No PowerPoint was supplied.
+# Approach to Learning Vol 1, Exemplars 8.C and 8.D), pre-class quiz points, and the revised notes with the
+# classmates' lecture screenshots and exam tips (one RA-vs-SLE pathophysiology question; SLE genetic/environmental triggers).
 EXAM = "e5"
 T = "e5slera"
 CONCEPTS = {
@@ -14,6 +15,8 @@ CONCEPTS = {
  "biologic":"Biologics & JAK inhibitors",
  "ranurse":"RA nursing priorities",
  "slepatho":"SLE pathophysiology & course",
+ "sletrig":"SLE genetic & environmental triggers",
+ "ravsle":"RA vs SLE pathophysiology",
  "sleskin":"SLE skin findings & photosensitivity",
  "sleorgan":"SLE organ involvement",
  "slerenal":"Lupus nephritis: the red flag",
@@ -21,7 +24,7 @@ CONCEPTS = {
  "slemeds":"SLE medications",
  "slenurse":"SLE nursing & flare prevention",
 }
-HI = ["radx","rameds","ranpharm","sleskin","slerenal","sledx","slemeds","slenurse","rapatho"]
+HI = ["sletrig","ravsle","radx","rameds","ranpharm","sleskin","slerenal","sledx","slemeds","slenurse","rapatho"]
 
 SATA = "Select all that apply."
 Q = []
@@ -219,3 +222,53 @@ q("slenurse","Which monitoring is important for a client with SLE? "+SATA,
 q("slenurse","A client with SLE on immunosuppressants has a fever. What should the nurse do?",
  ["*Report it promptly; infection risk is higher on immunosuppression","Encourage sun exposure || Not appropriate.","Ignore a low fever || Report it.","Double the steroid dose || Never self-adjust."],
  "Reinforce prescribed infection precautions.")
+
+# ================= Revised notes: classmates' lecture screenshots and exam tips =================
+q("ravsle","Which statement correctly contrasts the pathophysiology of RA and SLE?",
+ ["*RA attacks the synovial membrane, forming pannus that erodes cartilage and bone; SLE forms autoantibodies and immune complexes that inflame many organs","RA forms immune complexes in the kidneys; SLE erodes the synovium || Reversed.","Both are degenerative wear-and-tear diseases || Both are autoimmune.","RA is caused by UV light; SLE by uric acid crystals || Not the mechanisms."],
+ "Classmates report one exam question contrasting RA and SLE pathophysiology.")
+q("ravsle","Which organs does SLE inflammation most often damage? "+SATA,
+ ["*Skin","*Kidneys","*Joints","*Blood vessels","Only the synovium || That's RA's main target."],
+ "Immune complexes deposit in tissues and activate inflammation.")
+q("ravsle","Which finding points to RA rather than SLE?",
+ ["*Pannus with joint-space narrowing, erosions and deformity","Malar rash with photosensitivity || SLE.","Proteinuria with hypertension || Lupus nephritis.","Positive anti-Smith antibody || SLE."],
+ "SLE joint disease isn't usually erosive like RA.")
+q("sletrig","Which GENETIC factors are linked to SLE in the lecture?",
+ ["*HLA-DR2 and HLA-DR3 variants","HER2 overexpression || Breast cancer.","CCR5 tropism || HIV.","Lynch syndrome || Colorectal cancer."],
+ "Extra focus on SLE triggers was reported for the exam.")
+q("sletrig","Which are ENVIRONMENTAL or hormonal triggers of SLE? "+SATA,
+ ["*UV light","*Infections","*Certain medications","*Estrogen","Cold weather alone || Not listed."],
+ "Teach sun protection and avoiding tanning beds.")
+q("sletrig","Which populations carry a higher burden of SLE? "+SATA,
+ ["*Women","*Black/African American clients","*Hispanic clients","Men over 80 only || Not the pattern."],
+ "Per the lecture screenshots.")
+q("sletrig","A client with SLE asks why her flares started after a beach trip and a new medication. Best response?",
+ ["*'UV light and certain medications are known SLE triggers.'","'Those have nothing to do with lupus.' || They're listed triggers.","'Only genetics matter.' || Environment matters too.","'Flares come only from stress.' || Not the only trigger."],
+ "Genetics + environment (UV, infections, medications) + hormones (estrogen).")
+q("sledx","Which SLE antibody is MORE specific but less sensitive than ANA?",
+ ["*Anti-Smith (anti-Sm)","Anti-CCP || RA.","Rheumatoid factor || RA, not specific.","ASO titer || Strep."],
+ "ANA is often positive but not diagnostic alone.")
+q("sledx","Which test confirms suspected lupus nephritis?",
+ ["*Kidney biopsy","Anti-CCP || RA.","Chest x-ray || Not for kidneys.","Monospot || Mono."],
+ "Urinalysis for protein and blood, plus kidney function, also guide evaluation.")
+q("sleskin","Does every client with SLE have a malar rash?",
+ ["*No; it's characteristic, but not every client has it","Yes, always || Not every client.","Only men get it || Not true.","Only children get it || Not true."],
+ "Other skin signs: photosensitivity, oral ulcers, alopecia.")
+q("sleorgan","Which new findings in a client with SLE need prompt reporting? "+SATA,
+ ["*Seizures or psychosis","*Pleuritic chest pain","*Signs of pericarditis","*Edema with rising BP","Mild hair thinning that's unchanged for months || Lower priority."],
+ "Monitor for organ involvement.")
+q("slemeds","Which drugs are listed for SLE? "+SATA,
+ ["*NSAIDs such as aspirin, ibuprofen or naproxen","*Hydroxychloroquine","*Methylprednisolone or prednisone","*Azathioprine, mycophenolate mofetil or cyclophosphamide","Oseltamivir || Influenza."],
+ "Monitor blood counts, infection and organ toxicity by drug.")
+q("slemeds","What should be monitored for a client with SLE taking NSAIDs?",
+ ["*GI and kidney adverse effects","Hearing only || Not the focus.","Lipase || Not the focus.","Visual fields only || Hydroxychloroquine."],
+ "SLE already threatens the kidneys.")
+q("rameds","Which findings should a client on methotrexate for RA report? "+SATA,
+ ["*Mouth ulcers","*Easy bruising","*Cough or shortness of breath","*Fever or other signs of infection","Mild improvement in joint stiffness || Expected benefit."],
+ "Monitor CBC, liver tests and platelets.")
+q("rameds","What is the goal of DMARDs in RA?",
+ ["*To limit inflammation and joint destruction, not just relieve pain","Only to relieve pain || That's NSAIDs.","To cure RA || Not curative.","To replace physical therapy || Not the goal."],
+ "NSAIDs and steroids relieve symptoms but don't replace DMARDs.")
+q("ramani","What is a swan-neck deformity?",
+ ["*Hyperextension of the PIP joint with flexion of the distal joint","Fingers drifting toward the little-finger side || Ulnar deviation.","PIP flexion with DIP hyperextension || Boutonnière.","A nodule over the elbow || Rheumatoid nodule."],
+ "Also ulnar deviation and boutonnière deformity.")

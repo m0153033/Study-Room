@@ -27,6 +27,10 @@ DRUGS = {  # generic -> brand
  "miglitol":"Glyset","sitagliptin":"Januvia","pramlintide":"Symlin","insulin lispro":"Humalog","lispro":"Humalog",
  "insulin aspart":"NovoLog","aspart":"NovoLog","glulisine":"Apidra","glargine":"Lantus","detemir":"Levemir","degludec":"Tresiba",
  "albuterol":"ProAir","amlodipine":"Norvasc","prednisone":"Deltasone","tranexamic acid":"Cyklokapron","desmopressin":"DDAVP","epinephrine":"EpiPen",
+ "mesalamine":"Asacol HD","balsalazide":"Colazal","olsalazine":"Dipentum","budesonide":"Entocort EC","prednisolone":"Orapred",
+ "hydrocortisone":"Cortef","certolizumab":"Cimzia","golimumab":"Simponi","vedolizumab":"Entyvio","natalizumab":"Tysabri","ustekinumab":"Stelara",
+ "tofacitinib":"Xeljanz","azathioprine":"Imuran","mycophenolate mofetil":"CellCept","methylprednisolone":"Solu-Medrol","nystatin":"Mycostatin",
+ "clotrimazole":"Mycelex","fluconazole":"Diflucan","dolutegravir":"Tivicay",
  "acyclovir":"Zovirax","oseltamivir":"Tamiflu","nirsevimab":"Beyfortus","fluorouracil":"Efudex","hydroxychloroquine":"Plaquenil","belimumab":"Benlysta",
  "adalimumab":"Humira","infliximab":"Remicade","etanercept":"Enbrel","sulfasalazine":"Azulfidine","leflunomide":"Arava",
  "alvimopan":"Entereg","docusate sodium":"Colace","docusate":"Colace","bisacodyl":"Dulcolax","polyethylene glycol":"MiraLAX",
@@ -61,7 +65,7 @@ BRAND_ONLY = {"Entresto":"sacubitril/valsartan","Jardiance":"empagliflozin","Far
  "Creon":"pancrelipase","Januvia":"sitagliptin","Symlin":"pramlintide","Lasix":"furosemide","Mylanta":"aluminum/magnesium hydroxide",
  "Tums":"calcium carbonate","DigiFab":"digoxin immune Fab","Humalog":"insulin lispro","Lantus":"insulin glargine",
  "Eliquis":"apixaban","Xarelto":"rivaroxaban","Coumadin":"warfarin","Zofran":"ondansetron","Lovenox":"enoxaparin","Reglan":"metoclopramide",
- "Haldol":"haloperidol","Requip":"ropinirole","Ambien":"zolpidem","Provigil":"modafinil","Neupogen":"filgrastim","Dilantin":"phenytoin","Azopt":"brinzolamide","Andexxa":"andexanet alfa","Intermezzo":"zolpidem"}
+ "Haldol":"haloperidol","Requip":"ropinirole","Ambien":"zolpidem","Provigil":"modafinil","Neupogen":"filgrastim","Dilantin":"phenytoin","Azopt":"brinzolamide","Andexxa":"andexanet alfa","Intermezzo":"zolpidem","Truvada":"emtricitabine/tenofovir disoproxil fumarate","Descovy":"emtricitabine/tenofovir alafenamide","Biktarvy":"bictegravir/emtricitabine/tenofovir alafenamide","Apretude":"cabotegravir","Yeztugo":"lenacapavir"}
 
 ABBR = {
  "IV":"intravenous","IM":"intramuscular","SC":"subcutaneous","SUBQ":"subcutaneous","SubQ":"subcutaneous","PO":"by mouth","PRN":"as needed",
@@ -94,6 +98,10 @@ ABBR = {
  "BBB":"blood-brain barrier","ASM":"antiseizure medication","SJS":"Stevens-Johnson syndrome","HLA":"human leukocyte antigen",
  "ADHD":"attention-deficit/hyperactivity disorder","MS":"multiple sclerosis","RLS":"restless legs syndrome","CN":"cranial nerve",
  "GERD":"gastroesophageal reflux disease","GE":"gastroesophageal","LES":"lower esophageal sphincter","PUD":"peptic ulcer disease",
+ "ART":"antiretroviral therapy","AIDS":"acquired immunodeficiency syndrome","PrEP":"pre-exposure prophylaxis","PEP":"post-exposure prophylaxis",
+ "PJP":"Pneumocystis jirovecii pneumonia","TMP-SMX":"trimethoprim-sulfamethoxazole","IGRA":"interferon-gamma release assay","PPD":"purified protein derivative",
+ "MAC":"Mycobacterium avium complex","NAT":"nucleic acid test","HHV-8":"human herpesvirus 8","STI":"sexually transmitted infection","STIs":"sexually transmitted infections",
+ "UC":"ulcerative colitis","IPAA":"ileal pouch–anal anastomosis","5-ASA":"5-aminosalicylic acid","HLA-DR2":"human leukocyte antigen DR2","HLA-DR3":"human leukocyte antigen DR3",
  "VZV":"varicella-zoster virus","EBV":"Epstein-Barr virus","RSV":"respiratory syncytial virus","MMR":"measles, mumps, rubella","EIA":"enzyme immunoassay",
  "PCR":"polymerase chain reaction","LUQ":"left upper quadrant","SLE":"systemic lupus erythematosus","anti-CCP":"anti-cyclic citrullinated peptide",
  "Anti-CCP":"anti-cyclic citrullinated peptide","Anti-dsDNA":"anti-double-stranded DNA",
