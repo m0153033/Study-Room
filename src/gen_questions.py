@@ -35,11 +35,11 @@ SKIP = {"e2":{"epinephrine"},"e3":{"epinephrine"}}
 exam_of = {t: e["id"] for e in EXAMS for t in e["topics"]}
 
 concepts, hi, rows, counts = {}, {}, {}, {}
-def emit(t, qid, c, stem, o, a, r, w, sata):
+def emit(t, qid, c, stem, o, a, r, w, sata, v=0):
     f = format_question([stem] + o + [r] + w, skip=SKIP.get(exam_of[t], ()), extra=EXTRA.get(t))
     stem, o, r, w = f[0], f[1:1 + len(o)], f[1 + len(o)], f[2 + len(o):]
     rows.setdefault(t, []).append(json.dumps({"id": qid, "t": t, "c": c, "type": "sata" if sata else "mc", "q": stem, "o": o,
-                                  "a": a if sata else a[0], "r": r, "w": w}, ensure_ascii=False) + ",")
+                                  "a": a if sata else a[0], "r": r, "w": w, **({"v": v} if v else {})}, ensure_ascii=False) + ",")
     counts[t] = counts.get(t, 0) + 1
 
 # ---------- lecture banks written here ----------
@@ -92,6 +92,24 @@ def import_bank(exam, files, why):
             emit(t, f"{exam}{tag}_{q['id']}", q["c"], stem, list(q["o"]), a, q["r"], list(w), sata)
 import_bank("e2", [("", "ex2.json")], load_why("ex2_why_a.py", "ex2_why_b.py"))
 import_bank("e3", [("a", "ex3a.json"), ("b", "ex3b.json")], {})
+
+# ---------- refresh sets (src/refresh/*.py): new questions added on a schedule; newest set is served first ----------
+def load_refresh():
+    for f in sorted(glob.glob(os.path.join(HERE, "refresh", "*.py"))):
+        spec = importlib.util.spec_from_file_location(os.path.basename(f), f); b = importlib.util.module_from_spec(spec); spec.loader.exec_module(b)
+        t = b.T; assert t in concepts and concepts[t], ("refresh topic must already exist", t)
+        v = int(b.SET)  # YYYYMMDD of the refresh run
+        for n, (c, stem, opts, r) in enumerate(b.Q, 1):
+            assert c in concepts[t], (f, c)
+            o, a, w = [], [], []
+            for i, x in enumerate(opts):
+                if x.startswith("*"): a.append(i); o.append(x[1:].split("||")[0].strip())
+                else:
+                    txt, _, why = x.partition("||"); o.append(txt.strip()); w.append(why.strip()); assert why.strip(), (f, stem, x)
+            sata = "Select all that apply" in stem
+            assert a and (len(a) >= 2 if sata else len(a) == 1), (f, stem)
+            emit(t, f"{t}_r{b.SET}_{n}", c, stem, o, a, r, w, sata, v)
+load_refresh()
 
 # ---------- write ----------
 for e in EXAMS:

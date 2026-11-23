@@ -208,7 +208,7 @@ function answerText(q, a, sess){
    seen = {id: times asked on this device}; ties broken by a per-game shuffle so repeats rotate. */
 function freshest(pool, seen, seed){
   const order = shuffled(pool.map(q => q.id), seed);
-  return order.sort((a, b) => (seen[a] || 0) - (seen[b] || 0));
+  return order.sort((a, b) => (seen[a] || 0) - (seen[b] || 0) || ((getQ(b) || {}).v || 0) - ((getQ(a) || {}).v || 0));
 }
 function buildDeck(topics, mode, sess, seen, final){
   seen = seen || {};
