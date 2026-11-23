@@ -1,3 +1,4 @@
+import sys
 """Builds questions.js for the Study Room from:
  - every *_bank.py in this folder (Exam 1 and Exam 4 lectures, written from the lecture files), and
  - imported/ (the Exam 2 and Exam 3 question banks from the earlier study rooms, dosage math left out).
@@ -100,7 +101,8 @@ def load_refresh():
         t = b.T; assert t in concepts and concepts[t], ("refresh topic must already exist", t)
         v = int(b.SET)  # YYYYMMDD of the refresh run
         for n, (c, stem, opts, r) in enumerate(b.Q, 1):
-            assert c in concepts[t], (f, c)
+            if c not in concepts[t]:  # concept retired after a lecture update
+                print("skip retired concept", os.path.basename(f), c, file=sys.stderr); continue
             o, a, w = [], [], []
             for i, x in enumerate(opts):
                 if x.startswith("*"): a.append(i); o.append(x[1:].split("||")[0].strip())

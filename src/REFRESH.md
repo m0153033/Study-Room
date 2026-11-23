@@ -19,6 +19,7 @@ After 11/29: do nothing.
 1. `python3 src/tools/topic_ref.py --list` shows topics per exam. `python3 src/tools/topic_ref.py <topic>` prints that
    topic's concepts and every existing question with its answer and rationale. **That output is the only allowed
    source**: new questions may use only facts already stated there (the lecture material). No outside facts.
+   If it prints a **NOT TESTED** list (from the professor's updated lecture tips), write NO questions on those items.
 2. For every topic of the day's exams, write `src/refresh/<topic>_<YYYYMMDD>.py`:
    ```python
    T = "e5skin"; SET = "20261123"

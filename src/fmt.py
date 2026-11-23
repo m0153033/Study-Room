@@ -29,7 +29,7 @@ DRUGS = {  # generic -> brand
  "albuterol":"ProAir","amlodipine":"Norvasc","prednisone":"Deltasone","tranexamic acid":"Cyklokapron","desmopressin":"DDAVP","epinephrine":"EpiPen",
  "mesalamine":"Asacol HD","balsalazide":"Colazal","olsalazine":"Dipentum","budesonide":"Entocort EC","prednisolone":"Orapred",
  "hydrocortisone":"Cortef","certolizumab":"Cimzia","golimumab":"Simponi","vedolizumab":"Entyvio","natalizumab":"Tysabri","ustekinumab":"Stelara",
- "tofacitinib":"Xeljanz","azathioprine":"Imuran","mycophenolate mofetil":"CellCept","methylprednisolone":"Solu-Medrol","nystatin":"Mycostatin",
+ "tofacitinib":"Xeljanz","risankizumab":"Skyrizi","trimethoprim-sulfamethoxazole":"Bactrim","azathioprine":"Imuran","mycophenolate mofetil":"CellCept","methylprednisolone":"Solu-Medrol","nystatin":"Mycostatin",
  "clotrimazole":"Mycelex","fluconazole":"Diflucan","dolutegravir":"Tivicay",
  "acyclovir":"Zovirax","oseltamivir":"Tamiflu","nirsevimab":"Beyfortus","fluorouracil":"Efudex","hydroxychloroquine":"Plaquenil","belimumab":"Benlysta",
  "adalimumab":"Humira","infliximab":"Remicade","etanercept":"Enbrel","sulfasalazine":"Azulfidine","leflunomide":"Arava",

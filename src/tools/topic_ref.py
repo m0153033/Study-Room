@@ -15,6 +15,11 @@ if len(sys.argv) < 2 or sys.argv[1] == "--list":
     sys.exit()
 t = sys.argv[1]
 print(f"# {t} — {TOPICS[t]}\n\nKey concepts (HI, get 2 new questions): {HI[t]}\n")
+import glob, importlib.util
+for f in glob.glob(os.path.join(HERE, "*_bank.py")):
+    sp = importlib.util.spec_from_file_location("b", f); b = importlib.util.module_from_spec(sp); sp.loader.exec_module(b)
+    if b.T == t and getattr(b, "NOT_TESTED", None):
+        print("NOT TESTED per the professor's updated lecture. Write NO questions on these:\n- " + "\n- ".join(b.NOT_TESTED) + "\n")
 for c, label in CONCEPTS[t].items():
     print(f"\n## concept `{c}` — {label}")
     for q in [q for q in BANK if q["t"] == t and q["c"] == c]:

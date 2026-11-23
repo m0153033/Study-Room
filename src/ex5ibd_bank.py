@@ -1,193 +1,224 @@
-# Week 14.1 Immunity: Ulcerative Colitis & Crohn's — lesson plan and Pearson textbook excerpt (pp. 735–747), via notes.
+# Week 14.1 Immunity: Ulcerative Colitis & Crohn Disease — lecture PowerPoint (main) + updated notes after the 11/23 lecture.
 EXAM = "e5"
 T = "e5ibd"
 CONCEPTS = {
- "overview":"IBD overview & cause",
- "risk":"Onset age & risk factors",
- "ucpatho":"UC pathophysiology",
- "cdpatho":"Crohn's pathophysiology",
+ "overview":"IBS vs IBD",
+ "immune":"Immunity, autoimmune triggers & interrelated concepts",
  "compare":"UC vs Crohn's: the differences",
- "ucassess":"UC findings & severity",
- "megacolon":"Toxic megacolon & UC complications",
+ "ucassess":"UC findings",
+ "megacolon":"UC complications & toxic megacolon",
  "cdassess":"Crohn's findings & complications",
- "dx":"Diagnostics & monitoring",
- "asa":"5-ASA drugs",
- "steroid":"Corticosteroids for flares",
- "bio":"Biologics, JAK inhibitor & antibiotics",
- "nutri":"Nutrition, bowel rest & TPN",
- "surg":"Surgery: UC vs Crohn's",
- "ostomy":"Ileostomy & IPAA",
- "nursing":"Nursing priorities: fluids, skin, alerts",
- "life":"Lifespan & psychosocial care",
+ "dx":"Diagnostics",
+ "fe":"Fluid & electrolyte losses",
+ "nursing":"Acute flare: nursing priorities",
+ "steroid":"Corticosteroids for acute flares",
+ "asa":"5-ASA maintenance drugs",
+ "immuno":"Immunomodulators vs biologics",
+ "bio":"Biologics",
+ "nutri":"Diet: remission vs flare",
+ "tpn":"Total parenteral nutrition (TPN)",
+ "surg":"Surgery: Crohn's vs UC",
+ "health":"Health promotion, cancer screening & psychosocial support",
 }
-HI = ["compare","megacolon","cdassess","ucassess","surg","asa","nursing","bio"]
+HI = ["compare","megacolon","cdassess","ucassess","surg","asa","nursing","bio","tpn","nutri"]
+# Updated lecture leaves these out. Don't write questions on them:
+NOT_TESTED = ["'lead-pipe' colon / haustra", "stool-count severity grading (mild vs severe UC)", "vitamin B12 / bile salt absorption",
+ "smoking lowering UC risk", "drugs not on the lecture slide (balsalazide, olsalazine, budesonide, infliximab for IBD, certolizumab, golimumab, natalizumab, tofacitinib, antibiotics)",
+ "strictureplasty, continent ileostomy", "lifespan (teens, older adults, pregnancy)"]
 
 SATA = "Select all that apply."
 Q = []
 def q(c, stem, opts, r): Q.append((c, stem, opts, r))
 
-# ---------- overview ----------
-q("overview","Which statement about inflammatory bowel disease (IBD) is correct?",
- ["*It's chronic, relapsing intestinal inflammation with flare-ups and remissions","It's a single acute infection || Chronic and relapsing.","It's cured by antibiotics || No cure.","It only affects older adults || Peak onset 15–30."],
- "IBD includes ulcerative colitis (UC) and Crohn's disease.")
-q("overview","What causes IBD?",
- ["*The cause is unknown; genetic, immune, environmental and possibly infectious factors are involved","A high-fiber diet || Not the cause.","Only stress || Not the cause.","A single virus || Not established."],
- "There's no established way to prevent it.")
+# ---------- IBS vs IBD ----------
+q("overview","Which statements correctly compare irritable bowel syndrome (IBS) and inflammatory bowel disease (IBD)? "+SATA,
+ ["*IBS is a functional GI disorder; IBD is an autoimmune disease","*IBS shows no abnormalities when the colon is examined; IBD causes permanent structural changes","*IBD increases colon cancer risk; IBS does not","IBS increases colon cancer risk; IBD does not || Reversed.","Both cause permanent bowel damage || Only IBD does."],
+ "IBS = symptoms without structural damage. IBD = chronic inflammation with tissue injury.")
+q("overview","A client with IBS asks whether they will need frequent hospital stays like their cousin with Crohn's. Best response?",
+ ["*'IBS treatment is symptom management; IBD more often leads to hospital admissions.'","'Yes, IBS damages the bowel the same way.' || IBS causes no structural damage.","'IBS always turns into Crohn's.' || Not true.","'IBS needs biologics for life.' || Symptom management."],
+ "IBD treatment aims to maintain remission and limit exacerbations.")
+q("overview","Which symptoms fit IBS rather than IBD?",
+ ["*Episodes of diarrhea and/or constipation with pain, gas and distention","Bloody stools with nutritional deficits || IBD.","Fistulas and strictures || Crohn's.","Toxic megacolon || UC."],
+ "IBS-D = diarrhea type; IBS-C = constipation type.")
 
-# ---------- risk ----------
-q("risk","When does IBD onset typically peak?",
- ["*Around ages 15–30, with another onset period later in life","Only after 70 || Not the peak.","Only in infancy || Not the peak.","Only during pregnancy || Not the pattern."],
- "Family history contributes.")
-q("risk","How does smoking relate to IBD in the textbook?",
- ["*It increases Crohn's risk; it's linked to lower UC risk, but that's never a reason to recommend smoking","It prevents Crohn's || It increases Crohn's risk.","It has no relationship || There is one.","It should be recommended for UC || Never."],
- "Lack of physical activity may also raise Crohn's risk.")
-
-# ---------- UC patho ----------
-q("ucpatho","Where does ulcerative colitis occur?",
- ["*The mucosa of the colon and rectum, starting in the rectum and spreading continuously","Anywhere from mouth to anus in patches || Crohn's.","The entire bowel wall in patches || Crohn's.","The stomach only || Not UC."],
- "Fragile, ulcerated mucosa bleeds easily.")
-q("ucpatho","What does a 'lead-pipe' colon mean in long-standing UC?",
- ["*Loss of haustra gives the colon a smooth appearance","A cobblestone pattern || Crohn's.","A twisted bowel || Volvulus.","A bowel full of stool || Not the meaning."],
- "Chronic inflammation changes the colon's shape.")
-
-# ---------- Crohn's patho ----------
-q("cdpatho","Which features describe Crohn's disease? "+SATA,
- ["*Can affect any part of the GI tract, often the terminal ileum","*Transmural inflammation through the whole bowel wall","*Patchy skip lesions","*Cobblestone appearance with deep ulcers and fissures","Continuous inflammation starting in the rectum || UC."],
- "Thickening and fibrosis cause strictures; fistulas and abscesses can form.")
-q("cdpatho","Why can Crohn's disease cause bowel obstruction?",
- ["*Transmural thickening and fibrosis create strictures","Only mucosa is involved || That's UC.","It causes too much peristalsis only || Not the mechanism.","It removes the haustra || That's UC."],
- "Strictures narrow the bowel.")
+# ---------- immunity ----------
+q("immune","Why is IBD classified as an autoimmune disease?",
+ ["*The immune system can't tell 'self' from 'non-self' and attacks the bowel","The immune response is too weak || That's immunosuppression.","A bacteria permanently infects the bowel || Not the definition.","It's caused only by diet || Not the definition."],
+ "Too little response = immunosuppressed; too much = autoimmune.")
+q("immune","Which factors can contribute to developing an autoimmune disease like IBD? "+SATA,
+ ["*Genetic or family predisposition","*An existing autoimmune condition","*Female gender","*Environmental triggers such as smoking, stress, infection or chemical exposure","Regular exercise || Not a listed trigger."],
+ "Viral and bacterial infections can overstimulate the immune system.")
+q("immune","Which interrelated concepts does the lecture link to UC and Crohn's? "+SATA,
+ ["*Inflammation","*Fluid and electrolytes","*Nutrition","*Teamwork and collaboration","*Health promotion","Mobility || Not on the concept map."],
+ "Immunity is the central concept.")
 
 # ---------- compare ----------
 q("compare","Which pairings correctly compare UC and Crohn's? "+SATA,
- ["*UC — continuous; Crohn's — skip lesions","*UC — mucosa only; Crohn's — transmural","*UC — colon and rectum; Crohn's — mouth to anus, often terminal ileum","*UC — toxic megacolon; Crohn's — fistulas and strictures","UC — RLQ pain; Crohn's — LLQ pain || Reversed."],
- "Lock these in for Exam 5.")
-q("compare","A client has bloody diarrhea with mucus and LLQ cramping relieved by defecation. Which condition fits best?",
- ["*Ulcerative colitis","Crohn's disease || Usually less bloody with RLQ pain.","Small bowel obstruction || Vomiting and distention.","Appendicitis || Not this pattern."],
- "UC = bloody mucus diarrhea and LLQ cramps.")
-q("compare","A client has persistent non-bloody diarrhea, RLQ pain, weight loss and a fistula. Which condition fits best?",
- ["*Crohn's disease","Ulcerative colitis || Bloody stools, LLQ, no fistulas.","Rotavirus || Acute viral illness.","Hemorrhoids || Not this pattern."],
- "Crohn's = fistulas, abscesses, strictures, malabsorption.")
-q("compare","Which surgical statement is correct?",
- ["*Colectomy can treat colonic UC definitively; Crohn's can recur after resection","Surgery cures Crohn's || It can recur.","UC can never be treated with surgery || Colectomy treats it.","Both are cured by appendectomy || Not true."],
- "Surgery for Crohn's is for complications or failed conservative care.")
+ ["*UC: continuous; Crohn's: patchy skip lesions","*UC: mucosal layer; Crohn's: all layers (transmural)","*UC: rectum to colon only; Crohn's: entire GI tract ('gum to bum')","*UC: ulcerative appearance; Crohn's: cobblestone appearance","UC: right lower abdominal pain; Crohn's: left lower || Reversed."],
+ "Both usually start between ages 15 and 35.")
+q("compare","A client has frequent stools with blood and mucus, urgency and left lower abdominal cramping. Which condition fits best?",
+ ["*Ulcerative colitis","Crohn's disease || Loose, watery, greasy stools; right lower pain.","Irritable bowel syndrome || No bleeding or inflammation.","Bowel obstruction || Distention and vomiting."],
+ "UC = continuous colon/rectum mucosal disease with bloody stools.")
+q("compare","A client has loose, watery, greasy stools, right lower abdominal pain, weight loss and a fistula. Which condition fits best?",
+ ["*Crohn's disease","Ulcerative colitis || Bloody mucus stools; no fistulas.","Irritable bowel syndrome || No fistulas.","Toxic megacolon || UC complication."],
+ "Crohn's = strictures, fistulas, abscesses.")
+q("compare","Which features do UC and Crohn's SHARE? "+SATA,
+ ["*Nutritional deficits, anemia and weight loss","*Increased colon cancer risk","*Systemic complications","*Typical onset around ages 15–35","Continuous distribution || UC only."],
+ "Same immune cause, different pattern and depth.")
 
-# ---------- UC assessment ----------
-q("ucassess","Which findings are typical of UC? "+SATA,
- ["*Frequent bloody, mucus-containing diarrhea","*Urgency","*LLQ cramping relieved by defecation","*Anemia, dehydration and weight loss","Fistula draining to the skin || Crohn's."],
- "Severity ranges from mild to severe.")
-q("ucassess","Which client has SEVERE ulcerative colitis?",
- ["*Six or more bloody stools a day with fever, tachycardia and anemia","Three soft stools a day without blood || Mild at most.","Four or fewer stools a day || Mild.","One formed stool a day || Normal."],
- "Mild = four or fewer stools a day.")
+# ---------- UC findings ----------
+q("ucassess","Which findings are typical of ulcerative colitis? "+SATA,
+ ["*Frequent stools with blood and mucus","*Abdominal cramps and urgency","*Left lower abdominal pain","*Anemia and weight loss","Fistula draining to the skin || Crohn's."],
+ "Inflammation is in the mucosal layer of the rectum and colon.")
+q("ucassess","Where does ulcerative colitis begin and how does it spread?",
+ ["*It begins in the rectum and spreads continuously through the colon","It starts in the mouth and skips areas || Crohn's.","It affects only the small intestine || Not UC.","It forms patches anywhere in the GI tract || Crohn's."],
+ "UC = rectum to colon only.")
 
-# ---------- megacolon ----------
-q("megacolon","A client with severe UC has sudden marked abdominal distention, fever and tachycardia. What does the nurse suspect?",
- ["*Toxic megacolon","Expected flare symptoms || This is an emergency.","Constipation || Not this picture.","Shingles || Not related."],
- "Severe colonic dilation with paralysis risks perforation; get urgent evaluation.")
-q("megacolon","Which medications can contribute to toxic megacolon? "+SATA,
- ["*Antidiarrheals","*Opiates","*Certain antidepressants","Mesalamine || A 5-ASA used to treat UC."],
- "Antidiarrheals are generally avoided in severe acute UC.")
-q("megacolon","Which are major complications of UC? "+SATA,
- ["*Hemorrhage","*Perforation","*Toxic megacolon","*Increased long-term colorectal cancer risk","Fistulas to the bladder || More typical of Crohn's."],
- "Keep recommended colorectal surveillance.")
+# ---------- UC complications ----------
+q("megacolon","Which are complications of ulcerative colitis? "+SATA,
+ ["*Hemorrhage","*Perforation","*Toxic megacolon","*Colorectal cancer","Fistulas and abscesses || Crohn's."],
+ "Keep colorectal cancer screening on schedule.")
+q("megacolon","A client with a severe UC flare suddenly develops marked abdominal distention, fever and tachycardia. Which action is the priority?",
+ ["*Report it immediately as possible toxic megacolon/perforation","Give an antidiarrheal and recheck in 4 hours || Antidiarrheals can worsen it.","Encourage a high-fiber meal || Not during a flare.","Document as an expected flare || It's an emergency."],
+ "Report gross bleeding, severe pain or distention, fever or signs of shock.")
+q("megacolon","Why does the lecture say to use CAUTION with antidiarrheal medication in IBD?",
+ ["*They can be dangerous in severe UC or suspected toxic megacolon","They cure the disease too quickly || Not true.","They cause bloody stools || Not the reason.","They interact with all foods || Not the reason."],
+ "New distention or constipation may signal obstruction.")
 
-# ---------- Crohn's assessment ----------
+# ---------- Crohn's findings ----------
 q("cdassess","Which findings are typical of Crohn's disease? "+SATA,
- ["*Persistent diarrhea, often without visible blood","*Steady RLQ or periumbilical pain","*Weight loss, fever and fatigue","*Malnutrition","LLQ cramps with bloody mucus || UC."],
- "Nausea and vomiting can occur with upper-tract involvement.")
-q("cdassess","Why does Crohn's of the terminal ileum cause vitamin B12 deficiency?",
- ["*The terminal ileum absorbs vitamin B12 and bile salts","The colon makes B12 || Not the reason.","Steroids destroy B12 || Not the reason.","It causes bleeding only || Not the reason."],
- "Malabsorption contributes to anemia and nutrition deficits.")
-q("cdassess","A client with Crohn's reports passing gas and stool in the urine. What does this suggest?",
- ["*A bowel-to-bladder fistula","A UTI only || A fistula is suspected.","Toxic megacolon || UC.","Normal finding || Not normal."],
- "Fistulas can connect bowel to bladder or skin.")
+ ["*Loose, watery or greasy stools","*Abdominal pain, often right lower","*Patchy skip lesions anywhere in the GI tract","*Malabsorption and weight loss","Continuous inflammation starting at the rectum || UC."],
+ "Blood is less typical than in UC.")
 q("cdassess","Which are complications of Crohn's disease? "+SATA,
- ["*Strictures and obstruction","*Fistulas and abscesses","*Perianal disease","*Malabsorption","Lead-pipe colon || UC."],
- "Also perforation and increased colon cancer risk.")
+ ["*Strictures","*Obstruction","*Fistulas","*Abscesses","Toxic megacolon || UC."],
+ "Transmural inflammation affects every layer of the bowel wall.")
+q("cdassess","Why can Crohn's disease cause fistulas and strictures while UC usually doesn't?",
+ ["*Crohn's inflammation goes through all layers of the bowel wall","Crohn's only affects the mucosa || That's UC.","Crohn's is limited to the rectum || Not true.","Crohn's is a functional disorder || That's IBS."],
+ "Transmural = full thickness.")
+q("cdassess","A client with Crohn's reports cramping, vomiting and new abdominal distention with no stool. What should the nurse suspect?",
+ ["*Bowel obstruction from a stricture","Expected remission || Not remission.","Toxic megacolon || UC complication.","IBS flare || Not this picture."],
+ "Report new distention or constipation.")
 
 # ---------- diagnostics ----------
-q("dx","Which tests evaluate IBD? "+SATA,
- ["*Colonoscopy or sigmoidoscopy","*Stool tests to rule out infection","*CBC for anemia and WBC","*ESR and CRP","Anti-CCP || RA."],
- "Also monitor albumin, electrolytes, vitamins and liver tests.")
-q("dx","Why are stool tests done for a client with an IBD flare?",
- ["*To check for blood and mucus and rule out infectious diarrhea","To diagnose RA || Not related.","To measure B12 || Not the test.","To check CD4 || Not related."],
- "An elevated WBC may suggest inflammation or an abscess.")
+q("dx","Which tests are used to evaluate UC and Crohn's? "+SATA,
+ ["*Endoscopy with biopsy","*CT scan or MRI of the bowel and bowel wall","*Stool culture","*CBC and ESR","Anti-CCP || RA test."],
+ "Also electrolytes and albumin.")
+q("dx","Match the test with what it shows in IBD. Which pairing is correct?",
+ ["*Albumin — malnutrition","Stool culture — inflammation level || It rules out infection.","ESR — anemia || ESR is an inflammatory marker.","Electrolytes — bowel wall thickness || CT/MRI shows that."],
+ "CBC/WBC: anemia, infection, inflammation.")
+q("dx","Why is a stool culture ordered for a client with a suspected IBD flare?",
+ ["*To rule out an intestinal infection as the cause of diarrhea","To confirm Crohn's || Biopsy does.","To check albumin || A blood test.","To measure ESR || A blood test."],
+ "Endoscopy with biopsy confirms the mucosal changes.")
 
-# ---------- 5-ASA ----------
-q("asa","Which drugs are 5-ASA derivatives? "+SATA,
- ["*Mesalamine","*Sulfasalazine","*Balsalazide","*Olsalazine","Infliximab || A TNF inhibitor."],
- "They reduce intestinal inflammation; oral and/or rectal forms.")
-q("asa","Before sulfasalazine, which allergy should the nurse ask about?",
- ["*Sulfonamide or salicylate allergy","Shellfish allergy || Not related.","Latex allergy || Not related.","Egg allergy || Not related."],
- "Monitor kidney and liver function and CBC; watch for headache, dizziness or rash.")
+# ---------- fluid & electrolytes ----------
+q("fe","Which imbalances can frequent diarrhea in IBD cause? "+SATA,
+ ["*Hyponatremia","*Hypokalemia","*Hypomagnesemia","*Metabolic acidosis","Metabolic alkalosis || Diarrhea causes acidosis."],
+ "Also chloride loss, calcium deficiency and dehydration.")
+q("fe","Why is a client with long-standing IBD at risk for osteoporosis?",
+ ["*Calcium deficiency","Too much potassium || Not the link.","High sodium || Not the link.","Metabolic alkalosis || Not the link."],
+ "Calcium-rich foods are part of the remission diet.")
+q("fe","Which findings suggest dehydration in a client with an IBD flare? "+SATA,
+ ["*Tachycardia","*Orthostatic blood pressure changes","*Decreased urine output","*Rapid weight loss","Bounding pulses || Fluid overload."],
+ "Track stool frequency, weight and intake and output.")
+
+# ---------- nursing ----------
+q("nursing","During a severe IBD flare, which interventions does the nurse expect? "+SATA,
+ ["*NPO bowel rest with IV fluids as ordered","*Prescribed corticosteroids","*Nutrition support such as parenteral nutrition","*Perianal skin protection","Large high-fiber meals || Low fiber during flares."],
+ "Monitor vital signs, weight, I&O and stool output.")
+q("nursing","Which findings in a client with IBD must be reported immediately? "+SATA,
+ ["*Gross bleeding","*Severe abdominal pain or distention","*Fever","*Signs of shock","Mild cramping relieved after a stool || Expected."],
+ "These can signal hemorrhage or perforation.")
+q("nursing","Which findings should the nurse record for a client with an IBD flare? "+SATA,
+ ["*Stool frequency and blood or mucus","*Pain","*Vital signs and weight","*Intake and output","Peak flow || Not related."],
+ "Frequent diarrhea and bleeding can cause hypovolemia and anemia.")
 
 # ---------- steroids ----------
 q("steroid","What is the role of corticosteroids in IBD?",
- ["*Control acute flares; they aren't the main long-term maintenance strategy","Daily lifelong maintenance for everyone || Not the main strategy.","Cure the disease || Not curative.","Prevent colon cancer || Not their role."],
- "Taper as instructed; don't stop abruptly.")
-q("steroid","Which corticosteroids are listed for IBD? "+SATA,
- ["*Prednisone","*Prednisolone","*Budesonide","*Hydrocortisone","Mesalamine || A 5-ASA."],
- "Monitor infection and adverse effects.")
+ ["*Short-term control of acute exacerbations","Lifelong maintenance || Not the role.","Cure the disease || No cure.","Replace 5-ASA for maintenance || Maintenance uses other classes."],
+ "Monitor for adverse effects.")
+q("steroid","Which corticosteroids are on the IBD slide and by which routes? "+SATA,
+ ["*Methylprednisolone by mouth, rectally or IV","*Prednisone by mouth","Mesalamine IV for flares || A 5-ASA, not a steroid.","Adalimumab by mouth || A biologic injection."],
+ "Steroids = acute flare; the rest = maintenance.")
+
+# ---------- 5-ASA ----------
+q("asa","Which drugs are 5-ASA (5-aminosalicylic acid) anti-inflammatories for IBD maintenance? "+SATA,
+ ["*Sulfasalazine","*Mesalamine","Azathioprine || Immunomodulator.","Vedolizumab || Biologic."],
+ "Mesalamine comes in oral and rectal forms.")
+q("asa","Which teaching is specific to sulfasalazine? "+SATA,
+ ["*Take folic acid supplementation","*Avoid sun exposure","Get TB screening before each dose || Biologics.","Inject under the skin || It's oral."],
+ "It's taken by mouth for maintenance.")
+q("asa","A client asks why they still take mesalamine when they have no symptoms. Best response?",
+ ["*'It's a maintenance drug that keeps the inflammation controlled.'","'It's only for acute flares.' || That's steroids.","'You can stop once you feel better.' || Maintenance continues.","'It cures UC.' || No cure."],
+ "5-ASA drugs maintain remission.")
+
+# ---------- immunomodulators ----------
+q("immuno","Which drugs are immunomodulators for IBD? "+SATA,
+ ["*Azathioprine","*Methotrexate","*Mercaptopurine","Ustekinumab || Biologic.","Prednisone || Corticosteroid."],
+ "Monitor CBC and liver function.")
+q("immuno","Which statements compare immunomodulators and biologics correctly? "+SATA,
+ ["*Immunomodulators broadly suppress immunity; biologics target specific immune proteins","*Immunomodulators are taken by mouth daily; biologics are self-injected or given by IV infusion","*Immunomodulators take weeks to months to work; biologics work in a few weeks","*Immunomodulators are inexpensive; biologics are very expensive","Biologics are cheaper and work slower || Reversed."],
+ "Both are maintenance therapy.")
+q("immuno","Which labs does the nurse monitor for a client on azathioprine for Crohn's?",
+ ["*CBC and liver function","Hemoglobin A1C only || Not the focus.","Thyroid levels || Not listed.","Lipase only || Not listed."],
+ "Infection precautions apply too.")
 
 # ---------- biologics ----------
-q("bio","Which drugs are TNF inhibitors used for IBD? "+SATA,
- ["*Infliximab","*Adalimumab","*Certolizumab","*Golimumab","Vedolizumab || Integrin antagonist."],
- "Assess for infection.")
-q("bio","Which statement matches the IBD drug to its class?",
- ["*Vedolizumab — integrin antagonist; ustekinumab — interleukin-12/23 inhibitor; tofacitinib — oral JAK inhibitor","Tofacitinib — TNF inhibitor || It's a JAK inhibitor.","Ustekinumab — 5-ASA || IL-12/23 inhibitor.","Vedolizumab — corticosteroid || Integrin antagonist."],
- "Natalizumab is also an integrin antagonist.")
-q("bio","What is the priority teaching for a client on a biologic or tofacitinib?",
- ["*Report fever or other infection signs; review vaccines with the provider","Take extra antidiarrheals during flares || Can worsen severe UC.","Stop when feeling better || Take as prescribed.","Expect weight gain only || Not the priority."],
- "Immunosuppression requires infection vigilance.")
-q("bio","When are antibiotics used in IBD?",
- ["*When fistulas or abscesses complicate the disease","For every flare || Not routine.","To prevent toxic megacolon || Not the indication.","To replace 5-ASA drugs || Not a replacement."],
- "Antidiarrheals are avoided in severe acute UC.")
+q("bio","Which drugs are biologics on the IBD slide? "+SATA,
+ ["*Ustekinumab","*Adalimumab","*Risankizumab","*Vedolizumab","Mercaptopurine || Immunomodulator."],
+ "Given by IV infusion or subcutaneous injection.")
+q("bio","Before a client starts vedolizumab, what must be done?",
+ ["*Screen for infection and tuberculosis","Start folic acid || Sulfasalazine.","Check a sweat chloride test || Not related.","Schedule a colonoscopy every month || Not required."],
+ "Biologics suppress immunity.")
+q("bio","A client on adalimumab for UC has a fever and cough. What should the nurse do?",
+ ["*Report it promptly; biologics raise infection risk","Tell them it's an expected flare || Infection must be ruled out.","Double the next dose || Never.","Recommend an antidiarrheal || Not related."],
+ "Monitor during injections and infusions.")
 
 # ---------- nutrition ----------
-q("nutri","Which diet does the textbook suggest for IBD?",
- ["*High-calorie, high-protein, lower-fat, limiting lactose if intolerant","High-fat, low-protein || Opposite.","Unlimited dairy for calcium || Limit lactose if intolerant.","Clear liquids for life || Not the plan."],
- "Collaborate with a dietitian; individualize to tolerance.")
-q("nutri","During a severe IBD flare, what may be ordered for bowel rest?",
- ["*NPO, with enteral nutrition preferred when feasible and TPN if needed","A large high-fiber meal || Not during a severe flare.","Only coffee and juice || Not the plan.","Nothing; diet doesn't matter || It does."],
- "TPN carries more complications than enteral feeding.")
-q("nutri","Which monitoring supports nutrition in IBD? "+SATA,
- ["*Weight trends","*Fluid balance","*Protein status and albumin","*Micronutrients such as B12","Peak flow || Not related."],
- "Malabsorption is especially common in Crohn's.")
+q("nutri","Which foods fit the diet DURING A FLARE? "+SATA,
+ ["*Soft, bland, low-fiber foods","*Bananas","*Fully cooked, skinless vegetables","*Lean protein","Raw vegetables and whole grains || High fiber."],
+ "Hydrate with 8–10 glasses a day.")
+q("nutri","Which foods fit the diet DURING REMISSION? "+SATA,
+ ["*Fiber-rich whole foods","*Lean protein","*Calcium-rich foods","*Avoiding processed foods","Only clear liquids || Not in remission."],
+ "Keep a food journal and avoid trigger foods.")
+q("nutri","Which teaching applies to IBD in BOTH remission and flare? "+SATA,
+ ["*Drink 8–10 glasses of fluid a day","*Eat small, frequent meals","*Keep a food journal","*Avoid trigger foods","Eat high fiber at all times || Low fiber during flares."],
+ "Supplements and probiotics may be added.")
+q("nutri","Which statement by a client in an acute flare needs more teaching?",
+ ["*'I'll eat a big raw salad with nuts tonight.'","'I'll have a banana and cooked carrots.' || Correct flare choice.","'I'll eat small meals.' || Correct.","'I'll write down what I eat.' || Correct."],
+ "Flare = soft, bland, low fiber.")
+
+# ---------- TPN ----------
+q("tpn","Which nursing actions apply to TPN? "+SATA,
+ ["*Run it on an infusion pump","*Check the label for accuracy","*Check fingerstick glucose every 6 hours","*Change tubing every 24 hours with a micron filter","Piggyback other IV medications into the line || No other medications."],
+ "Also monitor labs, weight and I&O.")
+q("tpn","How often is the central line dressing changed for TPN per the lecture?",
+ ["*Every 7 days","Every hour || Too often.","Only when it falls off || Scheduled.","Every 24 hours like the tubing || Tubing is every 24 hours."],
+ "Maintain sterility of all ports.")
+q("tpn","What does TPN contain? "+SATA,
+ ["*Protein, carbohydrates and lipids","*Electrolytes","*Vitamins and minerals","Whole blood || Not TPN."],
+ "Macronutrients plus micronutrients.")
+q("tpn","Which is the PRIORITY risk the nurse prevents with TPN?",
+ ["*Central line infection","Constipation || Not the priority.","Hair loss || Not the priority.","Low fiber intake || Not the priority."],
+ "Sterile technique, dedicated line, monitor glucose and fluid balance.")
 
 # ---------- surgery ----------
-q("surg","When is surgery generally done for Crohn's disease?",
- ["*For complications or failure of conservative care","As a first-line cure || It doesn't cure Crohn's.","Only for mild disease || Not the indication.","Never || Resection or strictureplasty can help."],
- "Strictureplasty relieves obstruction without removing bowel.")
-q("surg","A client asks whether a total colectomy will cure their UC. Best response?",
- ["*'Removing the diseased colon can eliminate colonic UC.'","'No surgery helps UC.' || Colectomy can.","'It will cure Crohn's too.' || Crohn's can recur.","'It only treats the rectum.' || Total colectomy removes the colon."],
- "UC is limited to the colon and rectum.")
+q("surg","Which surgeries match the disease? "+SATA,
+ ["*Bowel resection: Crohn's","*J-pouch: UC","*Proctocolectomy with permanent ileostomy: UC","J-pouch: Crohn's || UC."],
+ "The J-pouch is built after the colon and rectum are removed.")
+q("surg","A client with Crohn's asks if a bowel resection will cure the disease. Best response?",
+ ["*'It treats complications, but Crohn's can come back.'","'Yes, it's curative.' || Crohn's can recur.","'Surgery is never done for Crohn's.' || Resection is.","'Only a J-pouch can cure Crohn's.' || J-pouch is for UC."],
+ "UC surgery that removes the colon can be definitive.")
+q("surg","What is a J-pouch?",
+ ["*An internal reservoir made from the end of the small intestine after the colon and rectum are removed","A permanent colostomy || Not a J-pouch.","A feeding tube || Not a J-pouch.","A stent in the colon || Not a J-pouch."],
+ "Also called ileal pouch–anal anastomosis (IPAA).")
 
-# ---------- ostomy ----------
-q("ostomy","What is an IPAA (ileal pouch–anal anastomosis)?",
- ["*A pouch made from the terminal ileum connected to the anal canal, often with a temporary loop ileostomy","A permanent colostomy || Not IPAA.","A stent in the colon || Not IPAA.","A feeding tube || Not IPAA."],
- "Used after total colectomy for UC.")
-q("ostomy","What should the nurse monitor for a client with a new ileostomy? "+SATA,
- ["*Output volume","*Hydration","*Peristomal skin integrity","*Pouch fit and teaching","Formed, solid stool || Ileostomy output is liquid."],
- "A continent ileostomy has an internal reservoir drained with a catheter.")
-
-# ---------- nursing ----------
-q("nursing","Which findings suggest hypovolemia in a client with an IBD flare? "+SATA,
- ["*Tachycardia","*Dry mucous membranes","*Poor skin turgor","*Thirst and weakness","Bounding pulses || Not hypovolemia."],
- "Record liquid stool output and I&O, vitals and daily weights.")
-q("nursing","Which findings in a client with IBD must be reported promptly? "+SATA,
- ["*Grossly bloody stools","*Increasing abdominal distention","*Severe pain or fever","*Hypotension","Mild cramping relieved by a bowel movement || Expected in UC."],
- "Perforation and hemorrhage can be emergencies.")
-q("nursing","How should the nurse protect perianal skin in a client with frequent diarrhea?",
- ["*Cleanse after each stool and apply prescribed barrier products","Leave the skin moist to soothe it || Causes breakdown.","Use harsh soap scrubs || Damages skin.","Apply heat packs || Not the care."],
- "Monitor for breakdown.")
-q("nursing","Which teaching applies to IBD? "+SATA,
- ["*Take medications as prescribed","*Recognize flare symptoms","*Keep colorectal surveillance and follow-up visits","*Monitor hydration and nutrition","Take antidiarrheals freely during severe flares || Avoid in severe UC."],
- "Teach central line/TPN care when relevant.")
-
-# ---------- lifespan ----------
-q("life","Which considerations apply to a teen with Crohn's disease? "+SATA,
- ["*Monitor growth and nutrition","*Address school and social impact","*Involve family while respecting privacy","Limit all school activities || Not the goal."],
- "Older adults may have less pronounced symptoms and more comorbidities.")
-q("life","Which psychosocial needs are common in IBD? "+SATA,
- ["*Stress management and coping","*Body image","*Privacy and social functioning","*Adjustment to an ostomy","None; IBD is purely physical || Psychosocial care matters."],
- "Pregnancy planning involves GI and maternal-fetal clinicians.")
+# ---------- health promotion ----------
+q("health","When does colorectal cancer screening start for a client with IBD per the lecture?",
+ ["*About 8 years after diagnosis or symptom onset, then every 1–3 years","At age 75 only || Too late.","Every month after diagnosis || Not the schedule.","Never, IBD doesn't raise risk || It does."],
+ "Individualized to risk.")
+q("health","Which health promotion teaching helps PREVENT IBD exacerbations? "+SATA,
+ ["*Avoid trigger foods","*Stress reduction","*Hydration","Stop maintenance medicine when well || Keep taking it."],
+ "Managing a flare = soft, bland, low fiber plus hydration.")
+q("health","Which psychosocial support fits a client with IBD? "+SATA,
+ ["*Refer to the Crohn's & Colitis Foundation","*Address body image and ostomy adjustment","*Support stress management","Tell them symptoms are all in their head || Not therapeutic."],
+ "Chronic symptoms affect daily life.")
